@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Raisyasalsabila</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font Inter & Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        cozy: ['"Quicksand"', 'sans-serif'],
+                    },
+                    colors: {
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e5ede5',
+                            200: '#cbdecb',
+                            300: '#a3c5a3',
+                            400: '#75a375',
+                            500: '#528252',
+                            600: '#3f673f',
+                            700: '#345334',
+                        },
+                        cream: '#fdfbf7',
+                        sakura: '#fff0f3',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdfbf7;
+            color: #2c3e35;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(163, 197, 163, 0.3);
+        }
+        .anime-gradient {
+            background: linear-gradient(135deg, #a3c5a3 0%, #75a375 50%, #528252 100%);
+        }
+        .hero-pattern {
+            background-color: #e5ede5;
+            background-image: radial-gradient(#75a375 0.75px, transparent 0.75px), radial-gradient(#75a375 0.75px, #e5ede5 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+    </style>
+</head>
+<body class="bg-cream min-h-screen flex flex-col selection:bg-sage-200 selection:text-sage-800">
+
+    <!-- NAVIGASI -->
+    <header class="sticky top-0 z-50 glass-card shadow-sm border-b border-sage-200/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#beranda" class="flex items-center space-x-2">
+                <span class="w-9 h-9 rounded-full anime-gradient flex items-center text-white justify-center font-bold text-lg shadow-md">
+                    R
+                </span>
+                <span class="font-cozy font-bold text-lg text-sage-700 tracking-wide">Raisyasalsabila</span>
+            </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-sage-700">
+                <a href="#beranda" class="hover:text-sage-500 transition">Beranda</a>
+                <a href="#tentang" class="hover:text-sage-500 transition">Tentang Saya</a>
+                <a href="#buku" class="hover:text-sage-500 transition">Koleksi Buku</a>
+                <a href="#canva" class="hover:text-sage-500 transition">Galeri Canva</a>
+                <a href="#bahasa" class="hover:text-sage-500 transition">Bahasa</a>
+                <a href="#anime" class="hover:text-sage-500 transition">Anime & Ghibli</a>
+                <a href="#playlist" class="hover:text-sage-500 transition">Musik</a>
+                <a href="#cmd" class="bg-sage-600 text-white px-4 py-2 rounded-xl shadow hover:bg-sage-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-terminal text-xs"></i> Panduan CMD
+                </a>
+            </nav>
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-sage-700 focus:outline-none text-xl p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-sage-200 px-4 pt-2 pb-4 space-y-2 font-medium text-sage-700">
+            <a href="#beranda" class="block py-2 hover:bg-sage-100 rounded px-2">Beranda</a>
+            <a href="#tentang" class="block py-2 hover:bg-sage-100 rounded px-2">Tentang Saya</a>
+            <a href="#buku" class="block py-2 hover:bg-sage-100 rounded px-2">Koleksi Buku</a>
+            <a href="#canva" class="block py-2 hover:bg-sage-100 rounded px-2">Galeri Canva</a>
+            <a href="#bahasa" class="block py-2 hover:bg-sage-100 rounded px-2">Bahasa</a>
+            <a href="#anime" class="block py-2 hover:bg-sage-100 rounded px-2">Anime & Ghibli</a>
+            <a href="#playlist" class="block py-2 hover:bg-sage-100 rounded px-2">Musik</a>
+            <a href="#cmd" class="block py-2 bg-sage-600 text-white rounded text-center">Panduan CMD</a>
+        </div>
+    </header>
+
+    <!-- UTAMA CONTAINER -->
+    <main class="flex-grow">
+
+        <!-- 1. BERANDA / HERO -->
+        <section id="beranda" class="hero-pattern py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto glass-card rounded-3xl p-8 sm:p-12 shadow-xl border border-sage-200 flex flex-col md:flex-row items-center gap-8">
+                <div class="w-40 h-40 sm:w-52 sm:h-52 rounded-full p-2 anime-gradient shadow-xl shrink-0 flex items-center justify-center bg-white">
+                    <div class="w-full h-full rounded-full bg-sage-100 flex items-center justify-center text-sage-600 text-5xl sm:text-6xl font-bold shadow-inner">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                </div>
+                <div class="text-center md:text-left space-y-4">
+                    <span class="inline-block bg-sage-100 text-sage-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        ✨ Selamat Datang di Dunia Saya ✨
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-sage-700 font-cozy">
+                        Halo, Saya Raisyasalsabila
+                    </h1>
+                    <p class="text-sage-600 text-base sm:text-lg max-w-xl">
+                        Seorang pelajar berusia 16 tahun yang bersemangat mengeksplorasi cerita lewat buku novel, menyusun desain kreatif di Canva, mempelajari bahasa baru, dan menikmati alunan musik serta dunia anime yang estetik.
+                    </p>
+                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3">
+                        <a href="#tentang" class="bg-sage-600 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg hover:bg-sage-700 transition flex items-center gap-2">
+                            <i class="fa-solid fa-user"></i> Kenali Saya
+                        </a>
+                        <a href="#cmd" class="bg-white text-sage-700 border border-sage-300 px-6 py-3 rounded-2xl font-semibold shadow-sm hover:bg-sage-50 transition flex items-center gap-2">
+                            <i class="fa-solid fa-terminal"></i> Lihat Perintah CMD
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. TENTANG SAYA -->
+        <section id="tentang" class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-sage-700 font-cozy">Tentang Saya</h2>
+                <div class="w-16 h-1 bg-sage-400 mx-auto mt-2 rounded-full"></div>
+                <p class="text-sage-600 mt-2">Informasi pribadi dan profil singkat</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card Nama -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-sage-200">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="text-xs text-sage-500 font-semibold uppercase tracking-wider">Nama Lengkap</h3>
+                    <p class="text-xl font-bold text-sage-700 mt-1">Raisyasalsabila</p>
+                </div>
+                <!-- Card Umur -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-sage-200">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3 class="text-xs text-sage-500 font-semibold uppercase tracking-wider">Umur</h3>
+                    <p class="text-xl font-bold text-sage-700 mt-1">16 Tahun</p>
+                </div>
+                <!-- Card TTL -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-sage-200">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h3 class="text-xs text-sage-500 font-semibold uppercase tracking-wider">Tempat, Tanggal Lahir</h3>
+                    <p class="text-lg font-bold text-sage-700 mt-1">Malintang, 17 Juli 2010</p>
+                </div>
+                <!-- Card Alamat -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-sage-200 md:col-span-2">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="text-xs text-sage-500 font-semibold uppercase tracking-wider">Alamat</h3>
+                    <p class="text-lg font-bold text-sage-700 mt-1">Kec. Bukit Malintang, Kab. Mandailing Natal, Prov. Sumatera Utara</p>
+                </div>
+                <!-- Card Status -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-sage-200">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xs text-sage-500 font-semibold uppercase tracking-wider">Status</h3>
+                    <p class="text-xl font-bold text-sage-700 mt-1">Pelajar</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HOBI & KOLEKSI BUKU -->
+        <section id="buku" class="py-16 px-4 sm:px-6 lg:px-8 bg-sage-50/50 border-y border-sage-200/50">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-sage-700 font-cozy">Hobi: Membaca Buku</h2>
+                    <div class="w-16 h-1 bg-sage-400 mx-auto mt-2 rounded-full"></div>
+                    <p class="text-sage-600 mt-2">Daftar buku favorit lengkap dengan penulisnya dalam tampilan rak buku estetik</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Buku 1 -->
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition border border-sage-200 flex flex-col">
+                        <div class="h-48 anime-gradient flex items-center justify-center p-6 text-white text-center relative overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 text-7xl opacity-10 font-bold">01</div>
+                            <div>
+                                <i class="fa-solid fa-book-open text-4xl mb-2"></i>
+                                <h3 class="font-bold text-lg leading-tight">Bungkam Suara</h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <span class="text-xs bg-sage-100 text-sage-700 font-semibold px-2.5 py-1 rounded-md">Novel Fiksi</span>
+                                <p class="text-sm text-sage-600 mt-3 font-medium">Karya: <span class="font-bold text-sage-800">J.S. Khairen</span></p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-sage-200 flex items-center justify-between text-xs text-sage-500">
+                                <span>Status: Selesai Dibaca</span>
+                                <i class="fa-solid fa-bookmark text-sage-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buku 2 -->
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition border border-sage-200 flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-emerald-600 to-teal-700 flex items-center justify-center p-6 text-white text-center relative overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 text-7xl opacity-10 font-bold">02</div>
+                            <div>
+                                <i class="fa-solid fa-book-open text-4xl mb-2"></i>
+                                <h3 class="font-bold text-lg leading-tight">Badan Intelijen Sekolah</h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <span class="text-xs bg-sage-100 text-sage-700 font-semibold px-2.5 py-1 rounded-md">Fiksi Misteri</span>
+                                <p class="text-sm text-sage-600 mt-3 font-medium">Karya: <span class="font-bold text-sage-800">Boy Candra</span></p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-sage-200 flex items-center justify-between text-xs text-sage-500">
+                                <span>Status: Favorit</span>
+                                <i class="fa-solid fa-bookmark text-sage-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buku 3 -->
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition border border-sage-200 flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-amber-700 to-yellow-800 flex items-center justify-center p-6 text-white text-center relative overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 text-7xl opacity-10 font-bold">03</div>
+                            <div>
+                                <i class="fa-solid fa-book-open text-4xl mb-2"></i>
+                                <h3 class="font-bold text-lg leading-tight">Laut Bercerita</h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <span class="text-xs bg-sage-100 text-sage-700 font-semibold px-2.5 py-1 rounded-md">Sejarah & Drama</span>
+                                <p class="text-sm text-sage-600 mt-3 font-medium">Karya: <span class="font-bold text-sage-800">Leila S. Chudori</span></p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-sage-200 flex items-center justify-between text-xs text-sage-500">
+                                <span>Status: Sangat Menginspirasi</span>
+                                <i class="fa-solid fa-bookmark text-sage-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buku 4 -->
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition border border-sage-200 flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-sky-600 to-indigo-700 flex items-center justify-center p-6 text-white text-center relative overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 text-7xl opacity-10 font-bold">04</div>
+                            <div>
+                                <i class="fa-solid fa-book-open text-4xl mb-2"></i>
+                                <h3 class="font-bold text-lg leading-tight">Si Anak Pemberani</h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between">
+                            <div>
+                                <span class="text-xs bg-sage-100 text-sage-700 font-semibold px-2.5 py-1 rounded-md">Novel Inspiratif</span>
+                                <p class="text-sm text-sage-600 mt-3 font-medium">Karya: <span class="font-bold text-sage-800">Tere Liye</span></p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-sage-200 flex items-center justify-between text-xs text-sage-500">
+                                <span>Status: Selesai Dibaca</span>
+                                <i class="fa-solid fa-bookmark text-sage-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. HOBI MENGEDIT (CANVA) -->
+        <section id="canva" class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-sage-700 font-cozy">Hobi: Mengedit (Canva)</h2>
+                <div class="w-16 h-1 bg-sage-400 mx-auto mt-2 rounded-full"></div>
+                <p class="text-sage-600 mt-2">Contoh hasil template dan karya desain yang dapat diedit menggunakan APK Canva</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Canva 1 -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-sage-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-solid fa-file-powerpoint"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-sage-700">Presentasi (PPT)</h3>
+                        <p class="text-sage-600 text-sm mt-2">Desain slide presentasi sekolah dan tugas kelompok yang interaktif, rapi, serta estetik.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-sage-200 flex items-center justify-between">
+                        <span class="text-xs bg-cyan-50 text-cyan-700 font-bold px-2 py-1 rounded">Canva Template</span>
+                        <span class="text-xs text-sage-500 font-medium"><i class="fa-solid fa-check text-sage-600"></i> Editable</span>
+                    </div>
+                </div>
+
+                <!-- Canva 2 -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-sage-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-700 flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-sage-700">Poster & Infografis</h3>
+                        <p class="text-sage-600 text-sm mt-2">Poster edukasi, pengumuman event sekolah, dan infografis materi pelajaran yang menarik.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-sage-200 flex items-center justify-between">
+                        <span class="text-xs bg-pink-50 text-pink-700 font-bold px-2 py-1 rounded">Canva Template</span>
+                        <span class="text-xs text-sage-500 font-medium"><i class="fa-solid fa-check text-sage-600"></i> Editable</span>
+                    </div>
+                </div>
+
+                <!-- Canva 3 -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-sage-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-sage-700">Struktur Organisasi</h3>
+                        <p class="text-sage-600 text-sm mt-2">Bagan struktur kelas, OSIS, maupun kepengurusan ekstrakurikuler dengan visual yang bersih.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-sage-200 flex items-center justify-between">
+                        <span class="text-xs bg-amber-50 text-amber-700 font-bold px-2 py-1 rounded">Canva Template</span>
+                        <span class="text-xs text-sage-500 font-medium"><i class="fa-solid fa-check text-sage-600"></i> Editable</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. BELAJAR BAHASA (INGGRIS & JEPANG) -->
+        <section id="bahasa" class="py-16 px-4 sm:px-6 lg:px-8 bg-sage-50/50 border-y border-sage-200/50">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-sage-700 font-cozy">Suka Belajar Bahasa</h2>
+                    <div class="w-16 h-1 bg-sage-400 mx-auto mt-2 rounded-full"></div>
+                    <p class="text-sage-600 mt-2">Bahasa asing yang sedang ditekuni saat ini</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Bahasa Inggris -->
+                    <div class="glass-card p-8 rounded-3xl shadow-sm border border-sage-200 flex items-start gap-6">
+                        <div class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-3xl shrink-0 font-bold">
+                            EN
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-sage-700">Bahasa Inggris (English)</h3>
+                            <p class="text-sage-600 text-sm mt-2">Mempelajari tata bahasa, memperkaya kosakata lewat novel dan lagu barat, serta melatih kemampuan percakapan harian.</p>
+                            <span class="inline-block mt-4 text-xs bg-blue-50 text-blue-700 font-bold px-3 py-1 rounded-full">Active Learner</span>
+                        </div>
+                    </div>
+
+                    <!-- Bahasa Jepang -->
+                    <div class="glass-card p-8 rounded-3xl shadow-sm border border-sage-200 flex items-start gap-6">
+                        <div class="w-16 h-16 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-3xl shrink-0 font-bold">
+                            JP
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-sage-700">Bahasa Jepang (日本語)</h3>
+                            <p class="text-sage-600 text-sm mt-2">Menghafal huruf dasar (Hiragana & Katakana), mempelajari kosa kata populer dari anime, serta menikmati lagu-lagu Jepang.</p>
+                            <span class="inline-block mt-4 text-xs bg-rose-50 text-rose-700 font-bold px-3 py-1 rounded-full">Anime Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ANIME & GHIBLI -->
+        <section id="anime" class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-sage-700 font-cozy">Suka Menonton Anime / Ghibli</h2>
+                <div class="w-16 h-1 bg-sage-400 mx-auto mt-2 rounded-full"></div>
+                <p class="text-sage-600 mt-2">Daftar anime dan film Ghibli favorit yang penuh inspirasi dan cerita memukau</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Anime 1 -->
+                <div class="glass-card p-4 rounded-2xl text-center shadow-sm hover:shadow-md transition border border-sage-200">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <h4 class="font-bold text-sage-700 text-sm">Ponyo</h4>
+                    <p class="text-xs text-sage-500 mt-1">Studio Ghibli</p>
+                </div>
+
+                <!-- Anime 2 -->
+                <div class="glass-card p-4 rounded-2xl text-center shadow-sm hover:shadow-md transition border border-sage-200">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-red-100 text-red-700 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <h4 class="font-bold text-sage-700 text-sm">Demon Slayer</h4>
+                    <p class="text-xs text-sage-500 mt-1">Action / Shonen</p>
+                </div>
+
+                <!-- Anime 3 -->
+                <div class="glass-card p-4 rounded-2xl text-center shadow-sm hover:shadow-md transition border border-sage-200">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <h4 class="font-bold text-sage-700 text-sm">The Apothecary Diaries</h4>
+                    <p class="text-xs text-sage-500 mt-1">Mystery / Historical</p>
+                </div>
+
+                <!-- Anime 4 -->
+                <div class="glass-card p-4 rounded-2xl text-center shadow-sm hover:shadow-md transition border border-sage-200">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </div>
+                    <h4 class="font-bold text-sage-700 text-sm">Tokyo Revengers</h4>
+                    <p class="text-xs text-sage-500 mt-1">Time-Travel / Action</p>
+                </div>
+
+                <!-- Anime 5 -->
+                <div class="glass-card p-4 rounded-2xl text-center shadow-sm hover:shadow-md transition border border-sage-200 col-span-2 sm:col-span-1">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <h4 class="font-bold text-sage-700 text-sm">Attack on Titan</h4>
+                    <p class="text-xs text-sage-500 mt-1">Epic / Fantasy</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. PLAYLIST MUSIK -->
+        <section id="playlist" class="py-16 px-4 sm:px-6 lg:px-8 bg-sage-50/50 border-y border-sage-200/50">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-sage-700 font-cozy">Mendengarkan Musik (Playlist)</h2>
+                    <div class="w-16 h-1 bg-sage-400 mx-auto mt-2 rounded-full"></div>
+                    <p class="text-sage-600 mt-2">Koleksi genre musik favorit yang menemani hari-hari</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- English Song -->
+                    <div class="glass-card p-6 rounded-2xl shadow-sm border border-sage-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+                            <h3 class="font-bold text-sage-700 text-lg">English Songs</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-sage-600">
+                            <li class="p-2 bg-white/60 rounded-xl flex items-center justify-between">
+                                <span>Taylor Swift - Lover</span>
+                                <i class="fa-solid fa-headphones text-sage-400"></i>
+                            </li>
+                            <li class="p-2 bg-white/60 rounded-xl flex items-center justify-between">
+                                <span>Ed Sheeran - Perfect</span>
+                                <i class="fa-solid fa-headphones text-sage-400"></i>
+                            </li>
+                            <li class="p-2 bg-white/60 rounded-xl flex items-center justify-between">
+                                <span>Billie Eilish - Ocean Eyes</span>
+                                <i class="fa-solid fa-headphones text-sage-400"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Japanese Song -->
+                    <div class="glass-card p-6 rounded-2xl shadow-sm border border-sage-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center">
+                                <i class="fa-solid fa-compact-disc"></i>
+                            </div>
+                            <h3 class="font-bold text-sage-700 text-lg">Japanese Songs</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-sage-600">
+                            <li class="p-2 bg-white/60 rounded-xl flex items-center justify-between">
+                                <span>YOASOBI - Idol</span>
+                                <i class="fa-solid fa-headphones text-sage-400"></i>
+                            </li>
+                            <li class="p-2 bg-white/60 rounded-xl flex items-center justify-between">
+                                <span>Aimer - Zankyou Sanka</span>
+                                <i class="fa-solid fa-headphones text-sage-400"></i>
+                            </li>
+                            <li class="p-2 bg-white/60 rounded-xl flex items-center justify-between">
+                                <span>Kenshi Yonezu - Lemon</span>
+                                <i class="fa-solid fa-headphones text-sage-400"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Indonesian Song -->
+                    <div class="glass-card p-6 rounded-2xl shadow-sm border border-sage-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                                <i class="fa-solid fa-radio"></i>
+                            </div>
+                            <h3 class="font-bold text-sage-700 text-lg">Indonesian Songs</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-sage-600">
+                            <li class="p-2 bg-white/60 rounded-xl flex items-center justify-between">
+                                <span>Tulus - Monokrom</span>
+                                <i class="fa-solid fa-headphones text-sage-400"></i>
+                            </li>
+                            <li class="p-2 bg-white/60 rounded-xl flex items-center justify-between">
+                                <span>Mahalini - Sial</span>
+                                <i class="fa-solid fa-headphones text-sage-400"></i>
+                            </li>
+                            <li class="p-2 bg-white/60 rounded-xl flex items-center justify-between">
+                                <span>Nadin Amizah - Bertaut</span>
+                                <i class="fa-solid fa-headphones text-sage-400"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. PANDUAN CMD -->
+        <section id="cmd" class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-sage-700 font-cozy">Cara Menjalankan Website di CMD</h2>
+                <div class="w-16 h-1 bg-sage-400 mx-auto mt-2 rounded-full"></div>
+                <p class="text-sage-600 mt-2">Panduan langkah demi langkah untuk membuka file website ini melalui Command Prompt (CMD)</p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-md border border-sage-200 space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-sage-600 text-white flex items-center justify-center font-bold shrink-0">1</div>
+                    <div>
+                        <h3 class="font-bold text-sage-700 text-lg">Simpan File Website</h3>
+                        <p class="text-sage-600 text-sm mt-1">Simpan kode di atas dengan nama file <code class="bg-sage-100 text-sage-800 px-2 py-0.5 rounded font-mono">raisya_portfolio.html</code> di dalam folder komputer Anda (misalnya di folder <code class="bg-sage-100 text-sage-800 px-2 py-0.5 rounded font-mono">C:\Users\Raisya\Website</code>).</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-sage-600 text-white flex items-center justify-center font-bold shrink-0">2</div>
+                    <div>
+                        <h3 class="font-bold text-sage-700 text-lg">Buka Command Prompt (CMD)</h3>
+                        <p class="text-sage-600 text-sm mt-1">Tekan tombol <code class="bg-sage-100 text-sage-800 px-2 py-0.5 rounded font-mono">Windows + R</code> pada keyboard, ketik <code class="bg-sage-100 text-sage-800 px-2 py-0.5 rounded font-mono">cmd</code> lalu tekan Enter.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-sage-600 text-white flex items-center justify-center font-bold shrink-0">3</div>
+                    <div>
+                        <h3 class="font-bold text-sage-700 text-lg">Masuk ke Direktori Folder File</h3>
+                        <p class="text-sage-600 text-sm mt-1">Ketik perintah perpindahan folder pada CMD sesuai letak file Anda tersimpan, contoh:</p>
+                        <div class="bg-slate-900 text-slate-100 p-4 rounded-xl font-mono text-sm mt-3 overflow-x-auto shadow-inner">
+                            <span class="text-emerald-400">C:\Users&gt;</span> cd Documents\Website
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-sage-600 text-white flex items-center justify-center font-bold shrink-0">4</div>
+                    <div>
+                        <h3 class="font-bold text-sage-700 text-lg">Jalankan File di Browser</h3>
+                        <p class="text-sage-600 text-sm mt-1">Ketik nama file untuk membukanya secara langsung melalui browser default komputer Anda:</p>
+                        <div class="bg-slate-900 text-slate-100 p-4 rounded-xl font-mono text-sm mt-3 overflow-x-auto shadow-inner flex items-center justify-between">
+                            <span>raisya_portfolio.html</span>
+                            <button onclick="copyCmdCode()" class="bg-sage-600 hover:bg-sage-500 text-white text-xs px-3 py-1 rounded transition">
+                                <i class="fa-solid fa-copy"></i> Salin
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-sage-700 text-sage-100 py-8 px-4 text-center mt-12">
+        <div class="max-w-5xl mx-auto space-y-3">
+            <p class="font-cozy font-semibold text-lg">Raisyasalsabila • Portofolio Pribadi</p>
+            <p class="text-xs text-sage-300">Kec. Bukit Malintang, Kab. Mandailing Natal, Prov. Sumatera Utara</p>
+            <p class="text-xs text-sage-400 pt-4 border-t border-sage-600">© 2026 Raisyasalsabila. Dibuat dengan penuh estetika & cinta.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        // Toggle mobile navigation menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Copy CMD command helper
+        function copyCmdCode() {
+            const textToCopy = "raisya_portfolio.html";
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            alert("Nama file berhasil disalin ke clipboard!");
+        }
+    </script>
+</body>
+</html>
