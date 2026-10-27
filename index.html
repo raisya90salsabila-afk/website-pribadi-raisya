@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raisya Salsabila 🌷 My Little World</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,500&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ffd6e7;--pink2:#ff9ec4;--lav:#d9ccff;--lav2:#a58bf0;--cream:#fff6e8;--white:#fff;--ink:#5b4a6b;--sh:0 10px 30px rgba(165,139,240,.22)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Quicksand',system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--cream),#fff0f6 40%,#f1ebff 100%);overflow-x:hidden;line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif}
+.script{font-family:'Pacifico',cursive;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;padding:.7rem 5%;box-shadow:0 2px 20px rgba(165,139,240,.15)}
+nav .logo{font-family:'Pacifico';color:var(--pink2);font-size:1.3rem}
+nav ul{display:flex;gap:1.1rem;list-style:none}
+nav a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.9rem;padding:.25rem .6rem;border-radius:20px;transition:.3s}
+nav a:hover,nav a.on{background:var(--pink);color:#c2457f}
+#burger{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer}
+section{padding:6rem 6% 3rem;position:relative;max-width:1200px;margin:auto}
+.title{text-align:center;font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:.4rem}
+.sub{text-align:center;opacity:.75;margin-bottom:2.2rem}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 1rem 'Quicksand';padding:.8rem 1.8rem;border-radius:40px;background:linear-gradient(135deg,var(--pink2),var(--lav2));color:#fff;text-decoration:none;box-shadow:var(--sh);transition:.3s}
+.btn:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 14px 30px rgba(255,158,196,.5)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.4rem}
+.card{background:rgba(255,255,255,.85);border-radius:24px;padding:1.5rem;box-shadow:var(--sh);transition:.35s;border:2px solid transparent}
+.card:hover{transform:translateY(-8px) rotate(-.6deg);border-color:var(--pink2)}
+.reveal{opacity:0;transform:translateY(30px);transition:1s ease}
+.reveal.show{opacity:1;transform:none}
+/* hero */
+#home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+#home h1{font-size:clamp(2rem,6vw,3.6rem);background:linear-gradient(90deg,#ff7fb2,#a58bf0);-webkit-background-clip:text;background-clip:text;color:transparent}
+#home h2{font-size:clamp(1.2rem,3vw,1.8rem);margin:.6rem 0 1rem}
+#home p{max-width:600px;margin-bottom:1.8rem}
+.moon{width:130px;height:130px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,var(--pink) 60%,var(--lav));box-shadow:0 0 60px var(--pink2);margin-bottom:1.5rem;animation:float 5s ease-in-out infinite;display:grid;place-items:center;font-size:3.4rem}
+@keyframes float{50%{transform:translateY(-14px)}}
+.fl{position:fixed;top:-40px;pointer-events:none;z-index:1;animation:fall linear forwards;opacity:.8}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+/* about */
+.bio{max-width:620px;margin:auto}
+.bio div{display:flex;gap:1rem;padding:.7rem 0;border-bottom:1px dashed var(--lav)}
+.bio b{min-width:120px;color:var(--lav2)}
+.quote{text-align:center;margin-top:1.6rem;font-style:italic;font-family:'Playfair Display';font-size:1.2rem;color:#c2457f}
+/* hobbies */
+.hob{text-align:center;cursor:pointer}
+.hob .ic{font-size:2.6rem;transition:.4s}.hob:hover .ic{transform:scale(1.3) rotate(10deg)}
+.hob p{max-height:0;overflow:hidden;opacity:0;transition:.5s;font-size:.92rem}
+.hob.open p,.hob:hover p{max-height:220px;opacity:1;margin-top:.6rem}
+/* books */
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:2rem;padding:1.5rem 1rem 0;border-bottom:14px solid #e3c9a8;border-radius:0 0 8px 8px;background:rgba(255,255,255,.4)}
+.book{perspective:700px;text-align:center;padding-bottom:1rem}
+.cover{height:260px;border-radius:4px 14px 14px 4px;padding:1.2rem .9rem;display:flex;flex-direction:column;justify-content:space-between;color:#fff;box-shadow:-6px 6px 18px rgba(91,74,107,.3),inset 8px 0 10px rgba(0,0,0,.12);transition:.5s;transform-origin:left}
+.book:hover .cover{transform:rotateY(-22deg) translateY(-8px)}
+.cover h3{font-size:1.25rem;text-shadow:0 2px 6px rgba(0,0,0,.25)}.cover small{font-size:.75rem;opacity:.9;letter-spacing:1px}.cover .e{font-size:2.4rem}
+.book h4{margin-top:.8rem}.book p{font-size:.85rem;opacity:.8}
+/* works */
+.work{padding:1rem}
+.mock{height:170px;border-radius:14px;overflow:hidden;position:relative;background:#fff;box-shadow:inset 0 0 0 1px #eee;font-size:.7rem;margin-bottom:.8rem;transition:.4s}
+.work:hover .mock{transform:scale(1.04)}
+.work button{margin-top:.6rem;padding:.5rem 1.2rem;font-size:.85rem}
+.m-ppt{background:linear-gradient(135deg,var(--lav),var(--pink));padding:1rem;display:flex;flex-direction:column;justify-content:center}
+.m-ppt b{font-size:1.2rem;font-family:'Playfair Display'}.m-ppt i{display:block;height:6px;background:#fff9;border-radius:4px;margin-top:6px;width:70%}
+.m-pos{background:var(--cream);display:grid;place-items:center;text-align:center;border:6px solid var(--pink2)}
+.m-pos b{font-family:Pacifico;font-size:1.5rem;color:#c2457f;font-weight:400}
+.m-org{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#fff8fc}
+.m-org span{background:var(--lav);padding:3px 9px;border-radius:8px;font-weight:700}.m-org div{display:flex;gap:8px}.m-org div span{background:var(--pink)}
+.m-inf{padding:.8rem;display:flex;align-items:flex-end;gap:8px;background:#f6f1ff}
+.m-inf i{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(var(--pink2),var(--lav2))}
+.m-inf em{position:absolute;top:8px;left:10px;font-style:normal;font-weight:700}
+.m-sch{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:6px;background:#fff}
+.m-sch span{background:var(--pink);border-radius:4px;padding:5px 2px;text-align:center}.m-sch span:nth-child(3n){background:var(--lav)}.m-sch span:nth-child(5n){background:#ffe9c7}
+.m-cre{background:radial-gradient(circle at 20% 30%,var(--pink) 0 25%,transparent 26%),radial-gradient(circle at 75% 65%,var(--lav) 0 30%,transparent 31%),var(--cream);display:grid;place-items:center;font-size:2.4rem}
+#modal{position:fixed;inset:0;background:rgba(91,74,107,.55);display:none;place-items:center;z-index:100;padding:1rem}
+#modal.on{display:grid}#modal .box{background:#fff;border-radius:24px;padding:1.5rem;width:min(520px,100%);text-align:center}
+#modal .mock{height:300px;font-size:1rem}
+/* anime */
+.anime{padding:0;overflow:hidden}
+.poster{height:190px;display:grid;place-items:center;font-size:3.6rem;transition:.5s}
+.anime:hover .poster{transform:scale(1.12) rotate(3deg)}
+.anime .in{padding:1rem 1.2rem 1.3rem;position:relative;background:#fff}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;background:var(--lav);padding:2px 10px;border-radius:12px;margin:.2rem 0 .4rem}
+.anime p{font-size:.85rem}
+/* music */
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:.7rem;margin-bottom:1.5rem}
+.tab{border:2px solid var(--lav);background:#fff;color:var(--ink);padding:.6rem 1.3rem;border-radius:30px;cursor:pointer;font:700 .95rem Quicksand;transition:.3s}
+.tab.on,.tab:hover{background:linear-gradient(135deg,var(--pink2),var(--lav2));color:#fff;border-color:transparent}
+.player{max-width:640px;margin:auto;background:rgba(255,255,255,.9);border-radius:28px;padding:1.2rem;box-shadow:var(--sh)}
+.pl-head{display:flex;gap:1rem;align-items:center;padding:.5rem .5rem 1rem}
+.disc{width:70px;height:70px;border-radius:50%;background:conic-gradient(var(--pink2),var(--lav2),var(--pink),var(--pink2));display:grid;place-items:center;font-size:1.6rem;flex:none}
+.spin{animation:rot 4s linear infinite}@keyframes rot{to{transform:rotate(360deg)}}
+.track{display:flex;align-items:center;gap:.8rem;padding:.7rem;border-radius:16px;transition:.3s}
+.track:hover{background:var(--cream)}.track.play{background:var(--pink)}
+.pb{width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;background:linear-gradient(135deg,var(--pink2),var(--lav2));color:#fff;font-size:1rem;flex:none;transition:.3s}.pb:hover{transform:scale(1.15)}
+.track .t{flex:1;min-width:0}.track b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track small{opacity:.75}
+.viz{display:flex;align-items:flex-end;gap:3px;height:28px;width:34px}
+.viz i{flex:1;background:var(--lav2);border-radius:3px;height:20%}
+.track.play .viz i{animation:bar .6s ease-in-out infinite alternate}
+.viz i:nth-child(2){animation-delay:.15s!important}.viz i:nth-child(3){animation-delay:.3s!important}.viz i:nth-child(4){animation-delay:.45s!important}
+@keyframes bar{to{height:100%}}
+.prog{height:6px;background:var(--lav);border-radius:6px;margin:1rem .5rem .3rem;overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--pink2);transition:width .3s linear}
+footer{text-align:center;padding:2.5rem 1rem;opacity:.85}
+@media(max-width:760px){#burger{display:block}nav ul{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fffffff2;padding:1rem;gap:.4rem;display:none;text-align:center}nav ul.open{display:flex}section{padding-top:5.5rem}.bio div{flex-direction:column;gap:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav>
+  <span class="logo">Raisya 🌷</span>
+  <button id="burger" aria-label="Menu">☰</button>
+  <ul id="menu">
+    <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#hobbies">Hobbies</a></li>
+    <li><a href="#books">Bookshelf</a></li><li><a href="#works">Creative</a></li><li><a href="#anime">Anime</a></li><li><a href="#music">Playlist</a></li>
+  </ul>
+</nav>
+
+<section id="home">
+  <div class="moon">🦋</div>
+  <h1 class="script">Welcome to My Little World 🌷</h1>
+  <h2>Hi, I'm Raisya Salsabila!</h2>
+  <p>Seorang pelajar yang suka membaca buku, berkreasi melalui desain, mempelajari bahasa baru, menonton anime, dan mendengarkan musik. Selamat datang di dunia kecilku!</p>
+  <a class="btn" href="#about">Get to Know Me ✨</a>
+</section>
+
+<section id="about">
+  <h2 class="title reveal">👩🏻 About Me</h2><p class="sub reveal">Sedikit tentang diriku</p>
+  <div class="card bio reveal">
+    <div><b>Nama</b><span>Raisya Salsabila</span></div>
+    <div><b>Umur</b><span>16 tahun</span></div>
+    <div><b>TTL</b><span>Malintang, 17 Juli 2010</span></div>
+    <div><b>Alamat</b><span>Kecamatan Bukit Malintang, Kabupaten Mandailing Natal, Provinsi Sumatera Utara</span></div>
+    <div style="border:0"><b>Status</b><span>Pelajar</span></div>
+  </div>
+  <p class="quote reveal">"Every day is a new opportunity to learn, create, and grow."</p>
+</section>
+
+<section id="hobbies">
+  <h2 class="title reveal">💗 My Hobbies</h2><p class="sub reveal">Klik atau arahkan kursor ke kartu</p>
+  <div class="grid" id="hobGrid"></div>
+</section>
+
+<section id="books">
+  <h2 class="title reveal">📖 My Bookshelf</h2><p class="sub reveal">Buku-buku favoritku</p>
+  <div class="shelf reveal" id="shelf"></div>
+</section>
+
+<section id="works">
+  <h2 class="title reveal">🎨 My Creative Works</h2><p class="sub reveal">Portofolio desain ala Canva</p>
+  <div class="grid" id="workGrid"></div>
+</section>
+
+<section id="anime">
+  <h2 class="title reveal">🌸 Anime &amp; Studio Ghibli</h2><p class="sub reveal">Katalog tontonanku</p>
+  <div class="grid" id="animeGrid"></div>
+</section>
+
+<section id="music">
+  <h2 class="title reveal">🎧 My Playlist</h2><p class="sub reveal">Pilih kategori, lalu tekan play</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="player reveal" id="player"></div>
+</section>
+
+<footer><span class="script" style="font-size:1.3rem;color:var(--pink2)">Made with 💗 by Raisya Salsabila</span><br>🌷 ✦ 🦋 ✦ 🌸</footer>
+
+<div id="modal"><div class="box"><div class="mock" id="mBig"></div><h3 id="mTitle"></h3><p>Contoh tampilan desain</p><br><button class="btn" onclick="modal.classList.remove('on')">Close</button></div></div>
+
+<script>
+const $=s=>document.querySelector(s);
+// ---------- DATA ----------
+const hobbies=[
+["📚","Membaca Buku","Saya suka membaca berbagai buku dan novel karena membaca dapat menambah wawasan, memperluas imajinasi, dan memberikan pengalaman melalui cerita."],
+["🎨","Mengedit dan Mendesain","Saya suka mengedit menggunakan aplikasi Canva untuk membuat berbagai desain yang kreatif dan menarik."],
+["🌏","Belajar Bahasa Asing","Saya tertarik mempelajari bahasa Inggris (English) dan bahasa Jepang (日本語)."],
+["🌸","Menonton Anime","Saya suka menonton anime dengan berbagai genre dan menikmati film animasi Studio Ghibli."],
+["🎧","Mendengarkan Musik","Saya suka mendengarkan musik berbahasa Inggris, Jepang, dan Indonesia."]];
+const books=[
+["Bungkam Suara","J.S. Khairen","linear-gradient(160deg,#a58bf0,#6f5bc4)","🤫"],
+["Badan Intelijen Sekolah","Intan Zs","linear-gradient(160deg,#ff9ec4,#d6618f)","🔍"],
+["Laut Bercerita","Leila S. Chudori","linear-gradient(160deg,#7fc8e8,#4b8fc2)","🌊"],
+["Si Anak Pemberani","Tere Liye","linear-gradient(160deg,#ffc98a,#e8955a)","🦁"]];
+const works=[
+["PowerPoint (PPT)","ppt",'<div class="m-ppt"><b>Presentasi Sekolah</b><i></i><i style="width:50%"></i><i style="width:60%"></i></div>'],
+["Poster","pos",'<div class="m-pos"><div><b>Reading Day</b><br>🌷 Baca buku, raih mimpi 🌷</div></div>'],
+["Struktur Organisasi","org",'<div class="m-org"><span>Ketua</span><div><span>Wakil</span><span>Sekretaris</span><span>Bendahara</span></div><div><span>Seksi 1</span><span>Seksi 2</span><span>Seksi 3</span></div></div>'],
+["Infografis","inf",'<div class="m-inf"><em>Data Kelas 📊</em><i style="height:40%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:65%"></i></div>'],
+["Jadwal Pelajaran","sch",'<div class="m-sch">'+["Sen","Sel","Rab","Kam","MTK","B.Ind","B.Ing","IPA","IPS","Seni","PJOK","B.Jpn","PKn","Agama","TIK","Pramuka"].map(x=>`<span>${x}</span>`).join("")+'</div>'],
+["Desain Kreatif Lainnya","cre",'<div class="m-cre">🌸🦋✨</div>']];
+const anime=[
+["Demon Slayer","Action • Fantasy","Tanjiro berpetualang menjadi pemburu iblis demi menyembuhkan adiknya, Nezuko.","🗡️","#ffb3c9,#a58bf0"],
+["The Apothecary Diaries","Mystery • Historical","Maomao, gadis apoteker cerdas, memecahkan misteri di istana kekaisaran.","🌿","#d9ccff,#ffe9c7"],
+["Tokyo Revengers","Action • Drama","Takemichi melompat ke masa lalu untuk menyelamatkan orang yang ia sayangi.","🏍️","#ffd6e7,#7e6bd0"],
+["Attack on Titan","Action • Dark Fantasy","Umat manusia berjuang bertahan hidup dari para Titan di balik tembok raksasa.","⚔️","#cbbcf5,#ff9ec4"],
+["Ponyo","Studio Ghibli • Fantasy","Ikan kecil bernama Ponyo ingin menjadi manusia setelah bertemu Sosuke.","🐠","#bfe6ff,#ffd6e7"],
+["Spirited Away","Studio Ghibli • Adventure","Chihiro tersesat di dunia roh dan harus menyelamatkan orang tuanya.","🏮","#ffe9c7,#d9ccff"],
+["My Neighbor Totoro","Studio Ghibli • Slice of Life","Dua saudari bertemu roh hutan yang ramah dan lucu bernama Totoro.","🌳","#c8f0d4,#fff6e8"],
+["Spy x Family","Comedy • Action","Seorang mata-mata, pembunuh bayaran, dan telepath membentuk keluarga palsu.","🥜","#ffd6e7,#fff6e8"]];
+const songs={
+"🎤 English Songs":[["Perfect","Ed Sheeran"],["Golden Hour","JVKE"],["Love Story","Taylor Swift"],["Counting Stars","OneRepublic"]],
+"🎶 Japanese Songs":[["Gurenge","LiSA"],["Idol (アイドル)","YOASOBI"],["Nandemonaiya","RADWIMPS"],["Kaikai Kitan","Eve"]],
+"🎵 Indonesian Songs":[["Hati-Hati di Jalan","Tulus"],["Komang","Raim Laode"],["Sial","Mahalini"],["Celengan Rindu","Fiersa Besari"]]};
+// ---------- RENDER ----------
+$("#hobGrid").innerHTML=hobbies.map(h=>`<div class="card hob reveal" onclick="this.classList.toggle('open')"><div class="ic">${h[0]}</div><h3>${h[1]}</h3><p>${h[2]}</p></div>`).join("");
+$("#shelf").innerHTML=books.map(b=>`<div class="book"><div class="cover" style="background:${b[2]}"><small>NOVEL</small><div class="e">${b[3]}</div><h3>${b[0]}</h3><small>${b[1]}</small></div><h4>${b[0]}</h4><p>${b[1]}</p></div>`).join("");
+$("#workGrid").innerHTML=works.map((w,i)=>`<div class="card work reveal"><div class="mock">${w[2]}</div><h3>${w[0]}</h3><button class="btn" onclick="view(${i})">View Design</button></div>`).join("");
+$("#animeGrid").innerHTML=anime.map(a=>`<div class="card anime reveal"><div class="poster" style="background:linear-gradient(135deg,${a[4]})">${a[3]}</div><div class="in"><h3>${a[0]}</h3><span class="tag">${a[1]}</span><p>${a[2]}</p></div></div>`).join("");
+function view(i){$("#mBig").innerHTML=works[i][2];$("#mTitle").textContent=works[i][0];$("#modal").classList.add("on")}
+$("#modal").onclick=e=>{if(e.target.id=="modal")e.currentTarget.classList.remove("on")};
+// ---------- PLAYLIST ----------
+let cat=Object.keys(songs)[0],cur=-1,pr=0,timer;
+$("#tabs").innerHTML=Object.keys(songs).map(k=>`<button class="tab" onclick="setCat('${k}')">${k}</button>`).join("");
+function setCat(k){cat=k;cur=-1;stop();draw()}
+function stop(){clearInterval(timer);pr=0}
+function toggle(i){
+  if(cur===i){cur=-1;stop()}else{cur=i;stop();timer=setInterval(()=>{pr+=2;if(pr>=100){toggle((i+1)%songs[cat].length);return}const p=$(".track.play .prog-fill");document.querySelector(".prog i").style.width=pr+"%"},500)}
+  draw();
+}
+function draw(){
+  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.textContent==cat));
+  $("#player").innerHTML=`<div class="pl-head"><div class="disc ${cur>=0?'spin':''}">🎵</div><div><h3>${cat}</h3><small>${songs[cat].length} lagu • demo tampilan pemutar</small></div></div>`+
+  songs[cat].map((s,i)=>`<div class="track ${cur===i?'play':''}"><button class="pb" onclick="toggle(${i})" aria-label="play/pause">${cur===i?'⏸':'▶'}</button><div class="t"><b>${s[0]}</b><small>${s[1]}</small></div><div class="viz"><i></i><i></i><i></i><i></i></div></div>`).join("")+
+  `<div class="prog"><i style="width:${pr}%"></i></div>`;
+}
+draw();
+// ---------- UI ----------
+$("#burger").onclick=()=>$("#menu").classList.toggle("open");
+document.querySelectorAll("#menu a").forEach(a=>a.onclick=()=>$("#menu").classList.remove("open"));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+const links=[...document.querySelectorAll("#menu a")],secs=links.map(a=>$(a.getAttribute("href")));
+addEventListener("scroll",()=>{let k=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<140)k=i});links.forEach((a,i)=>a.classList.toggle("on",i==k))});
+// floating decorations
+const deco=["🌸","🌷","⭐","✨","🦋","💮"];
+setInterval(()=>{const d=document.createElement("span");d.className="fl";d.textContent=deco[Math.random()*deco.length|0];d.style.left=Math.random()*100+"vw";d.style.fontSize=(14+Math.random()*16)+"px";d.style.animationDuration=(9+Math.random()*8)+"s";document.body.appendChild(d);setTimeout(()=>d.remove(),17000)},1400);
+</script>
+</body>
+</html>
