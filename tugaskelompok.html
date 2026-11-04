@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mengenal Kecerdasan Buatan (AI)</title>
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f4f6fb;--card:#ffffff;--text:#1b2233;--muted:#5b6880;--accent:#5b4bdb;--accent2:#ece9ff;--border:#e0e4ef;--hero1:#5b4bdb;--hero2:#2fa8e8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1220;--card:#171d30;--text:#e8ecf7;--muted:#9aa6c0;--accent:#9d93ff;--accent2:#221f45;--border:#2a3250;--hero1:#3d31a8;--hero2:#1d6a96;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1220;--card:#171d30;--text:#e8ecf7;--muted:#9aa6c0;--accent:#9d93ff;--accent2:#221f45;--border:#2a3250;--hero1:#3d31a8;--hero2:#1d6a96;
+}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.7}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--card);border-bottom:1px solid var(--border);display:flex;gap:6px;padding:10px 12px;overflow-x:auto;justify-content:safe center}
+nav a{white-space:nowrap;padding:8px 16px;border-radius:999px;color:var(--text);text-decoration:none;font-weight:600;font-size:.9rem}
+nav a:hover{background:var(--accent);color:#fff}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;text-align:center;padding:72px 20px 80px}
+.hero h1{margin:0 0 12px;font-size:clamp(1.8rem,6vw,2.8rem);line-height:1.2}
+.hero p{max-width:560px;margin:0 auto;opacity:.95;font-size:1.05rem}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.2);padding:6px 16px;border-radius:999px;margin-bottom:18px;font-size:.85rem;font-weight:600}
+.btn{display:inline-block;margin-top:24px;background:#fff;color:#3b2fb5;padding:12px 26px;border-radius:999px;font-weight:700;text-decoration:none}
+main{max-width:800px;margin:0 auto;padding:8px 16px 40px}
+section{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px 24px;margin-top:18px}
+h2{margin:0 0 12px;font-size:1.35rem;color:var(--accent)}
+p{margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:8px}
+.item{background:var(--accent2);border-radius:14px;padding:16px}
+.item h3{margin:0 0 6px;font-size:1rem}
+.item p{margin:0;font-size:.92rem;color:var(--muted)}
+.timeline{list-style:none;margin:0;padding:0;border-left:3px solid var(--accent)}
+.timeline li{padding:0 0 16px 18px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-8px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--accent)}
+.timeline b{color:var(--accent)}
+ul.list{margin:0;padding-left:20px}
+ul.list li{margin-bottom:6px}
+.team{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.team li{display:flex;align-items:center;gap:14px;background:var(--accent2);border-radius:14px;padding:12px 16px;font-weight:600}
+.team .no{flex:0 0 34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:8px 16px 32px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#beranda">Beranda</a>
+  <a href="#pengertian">Pengertian</a>
+  <a href="#sejarah">Sejarah</a>
+  <a href="#jenis">Jenis AI</a>
+  <a href="#manfaat">Manfaat</a>
+  <a href="#tantangan">Tantangan</a>
+  <a href="#kelompok">Kelompok</a>
+</nav>
+
+<div class="hero" id="beranda">
+  <div class="badge">🤖 Teknologi Masa Depan</div>
+  <h1>Mengenal Kecerdasan Buatan (AI)</h1>
+  <p>Pelajari apa itu AI, bagaimana sejarahnya, jenis-jenisnya, serta manfaat dan tantangannya dalam kehidupan sehari-hari.</p>
+  <a class="btn" href="#pengertian">Mulai Belajar</a>
+</div>
+
+<main>
+
+<section id="pengertian">
+  <h2>Pengertian AI</h2>
+  <p><b>Kecerdasan Buatan</b> atau <i>Artificial Intelligence</i> (AI) adalah kemampuan sistem komputer untuk meniru cara berpikir dan belajar manusia. Dengan AI, mesin dapat mengenali pola, mengambil keputusan, memahami bahasa, bahkan menghasilkan teks atau gambar.</p>
+  <p>AI bekerja dengan mempelajari data dalam jumlah besar. Semakin banyak dan baik data yang dipelajari, semakin akurat hasil yang diberikan.</p>
+  <div class="grid">
+    <div class="item"><h3>Machine Learning</h3><p>Komputer belajar dari data tanpa diprogram secara langsung untuk setiap tugas.</p></div>
+    <div class="item"><h3>Deep Learning</h3><p>Cabang machine learning yang memakai jaringan saraf tiruan berlapis-lapis.</p></div>
+    <div class="item"><h3>Generative AI</h3><p>AI yang mampu membuat konten baru seperti teks, gambar, dan musik.</p></div>
+  </div>
+</section>
+
+<section id="sejarah">
+  <h2>Sejarah Singkat AI</h2>
+  <ul class="timeline">
+    <li><b>1950</b> – Alan Turing mengajukan pertanyaan apakah mesin dapat berpikir dan memperkenalkan Turing Test.</li>
+    <li><b>1956</b> – Istilah "Artificial Intelligence" dipopulerkan pada konferensi Dartmouth oleh John McCarthy dan rekan-rekannya.</li>
+    <li><b>1997</b> – Komputer Deep Blue milik IBM mengalahkan juara catur dunia Garry Kasparov.</li>
+    <li><b>2010-an</b> – Deep learning berkembang pesat, mendorong kemajuan pengenalan suara dan gambar.</li>
+    <li><b>2020-an</b> – Generative AI dan chatbot canggih digunakan secara luas oleh masyarakat.</li>
+  </ul>
+</section>
+
+<section id="jenis">
+  <h2>Jenis-jenis AI</h2>
+  <div class="grid">
+    <div class="item"><h3>Narrow AI</h3><p>AI yang dirancang untuk satu tugas tertentu, misalnya rekomendasi video atau asisten suara. Inilah yang kita gunakan saat ini.</p></div>
+    <div class="item"><h3>General AI</h3><p>AI yang mampu memahami dan mengerjakan berbagai tugas selevel manusia. Masih berupa target penelitian.</p></div>
+    <div class="item"><h3>Super AI</h3><p>AI hipotetis yang kemampuannya melampaui manusia di hampir semua bidang. Saat ini baru berupa konsep.</p></div>
+  </div>
+</section>
+
+<section id="manfaat">
+  <h2>Manfaat AI</h2>
+  <ul class="list">
+    <li><b>Pendidikan:</b> membantu belajar, menjelaskan materi, dan memberi latihan soal.</li>
+    <li><b>Kesehatan:</b> membantu dokter menganalisis hasil pemeriksaan dan gambar medis.</li>
+    <li><b>Transportasi:</b> navigasi peta, prediksi kemacetan, dan pengembangan kendaraan otonom.</li>
+    <li><b>Bisnis:</b> layanan pelanggan otomatis dan analisis data penjualan.</li>
+    <li><b>Hiburan:</b> rekomendasi film, musik, dan permainan.</li>
+  </ul>
+</section>
+
+<section id="tantangan">
+  <h2>Tantangan dan Etika</h2>
+  <ul class="list">
+    <li><b>Privasi data:</b> AI membutuhkan data, sehingga keamanan data pribadi harus dijaga.</li>
+    <li><b>Informasi keliru:</b> hasil AI bisa salah, jadi perlu dicek kembali.</li>
+    <li><b>Ketergantungan:</b> penggunaan berlebihan dapat menurunkan kemampuan berpikir kritis.</li>
+    <li><b>Dampak pekerjaan:</b> beberapa jenis pekerjaan berubah, dan keterampilan baru dibutuhkan.</li>
+  </ul>
+  <p style="margin-top:12px">Karena itu, AI sebaiknya digunakan secara bijak, jujur, dan bertanggung jawab.</p>
+</section>
+
+<section id="kelompok">
+  <h2>Anggota Kelompok</h2>
+  <ul class="team">
+    <li><span class="no">1</span>Raisya Salsabila</li>
+    <li><span class="no">2</span>Gresya Seltilina</li>
+    <li><span class="no">3</span>Keysha Taqiya</li>
+    <li><span class="no">4</span>Zahra Sapitri</li>
+    <li><span class="no">5</span>Mulia Angriani</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>© 2026 Kelompok AI · Terima kasih telah membaca</footer>
+
+</body>
+</html>
